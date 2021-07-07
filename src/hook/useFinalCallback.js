@@ -5,12 +5,14 @@ import { useCallback } from 'react'
  *
  * @param {function} callback
  * @param {*} dependency
+ * @param {Object} option
+ * @param {boolean} option.preventDefault
  * @return {function}
  */
-const useFinalCallback = function (callback, dependency = []) {
+const useFinalCallback = function (callback, dependency = [], { preventDefault = false } = {}) {
     return useCallback(function (event, ...rest) {
-        event?.preventDefault()
         event?.stopPropagation()
+        preventDefault && event?.preventDefault()
         callback && callback(event, ...rest)
     }, [callback, ...dependency])
 }
