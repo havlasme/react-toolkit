@@ -14,7 +14,7 @@ const useFinalCallback = function (callback, dependency = [], { preventDefault =
         event?.stopPropagation()
         preventDefault && event?.preventDefault()
         callback && callback(event, ...rest)
-    }, [callback, ...dependency])
+    }, [...dependency, preventDefault])
 }
 
 export default useFinalCallback
