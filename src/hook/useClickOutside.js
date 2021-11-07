@@ -1,4 +1,5 @@
-import { useCallback, useEffect, useRef } from 'react'
+import { is } from 'ramda'
+import { useEffect, useRef } from 'react'
 
 /**
  * The useClickOutside hook.
@@ -9,12 +10,13 @@ import { useCallback, useEffect, useRef } from 'react'
 const useClickOutside = function (callback) {
     const element = useRef(null)
 
-    const onMouseDown = useCallback(function (event) {
-        if (!element.current || element.current.contains(event.target)) return void 0
-        callback && callback(event)
-    }, [callback, element])
-
     useEffect(function () {
+        const onMouseDown = function (event) {
+            if (!element.current || element.current.contains(event.target)) return void 0
+
+            is(Function, callback) && callback(event)
+        }
+
         document.addEventListener('mousedown', onMouseDown)
         document.addEventListener('touchstart', onMouseDown)
 
@@ -22,7 +24,7 @@ const useClickOutside = function (callback) {
             document.removeEventListener('mousedown', onMouseDown)
             document.removeEventListener('touchstart', onMouseDown)
         }
-    }, [onMouseDown])
+    }, [callback, element])
 
     return element
 }
