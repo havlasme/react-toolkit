@@ -16,9 +16,11 @@ const useClickOutside = function (callback) {
 
     useEffect(function () {
         document.addEventListener('mousedown', onMouseDown)
+        document.addEventListener('touchstart', onMouseDown)
 
         return function () {
             document.removeEventListener('mousedown', onMouseDown)
+            document.removeEventListener('touchstart', onMouseDown)
         }
     }, [onMouseDown])
 
