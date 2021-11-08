@@ -1,4 +1,4 @@
-import { isNil } from 'ramda'
+import { equals, isNil } from 'ramda'
 import { useLayoutEffect } from 'react'
 
 /**
@@ -10,13 +10,13 @@ const useClassName = function (className) {
     useLayoutEffect(function () {
         if (isNil(className)) return void 0
 
-        this.cache.push(className)
+        useClassName.cache.push(className)
         document.body.classList.add(className)
 
-        return (function () {
-            this.cache.splice(this.cache.findIndex(className), 1)
-            !this.cache.includes(className) && document.body.classList.remove(className)
-        }).bind(this)
+        return function () {
+            useClassName.cache.splice(useClassName.cache.findIndex(equals(className)), 1)
+            !useClassName.cache.includes(className) && document.body.classList.remove(className)
+        }
     }, [className])
 }
 
