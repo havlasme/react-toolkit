@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
 import useBoolState from '../../hook/useBoolState'
+import useClassName from '../../hook/useClassName'
 import createBackdropElement from './createBackdropElement'
 import createModalElement from './createModalElement'
 import propTypes from './index.type'
@@ -18,6 +19,8 @@ const ModalPortal = function ({ children, show = false }) {
     const backdrop = useRef(createBackdropElement(show))
     // whether is the modal element mounted
     const [mounted, setMounted] = useBoolState(false)
+
+    useClassName(show ? 'modal-open' : null)
 
     useEffect(function () {
         if (show) {
