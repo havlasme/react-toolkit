@@ -1,5 +1,6 @@
 export { default as ModalPortal } from './bootstrap/ModalPortal'
 export { default as withComponentProxy } from './component/withComponentProxy'
+export { default as withMandatoryProp } from './component/withMandatoryProp'
 export { default as useBoolState } from './hook/useBoolState'
 export { default as useClassName } from './hook/useClassName'
 export { default as useClickOutside } from './hook/useClickOutside'
