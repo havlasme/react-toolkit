@@ -1,4 +1,4 @@
-import { any, isNil } from 'ramda'
+import { any, isNil, props } from 'ramda'
 import React from 'react'
 
 /**
