@@ -16,7 +16,7 @@ const useFinalCallback = function (callback, dependency = [], { blurActiveElemen
         preventDefault && event?.preventDefault()
         blurActiveElement && document.activeElement?.blur()
         callback && callback(event, ...rest)
-    }, [...dependency, preventDefault])
+    }, [...dependency, blurActiveElement, preventDefault])
 }
 
 export default useFinalCallback
