@@ -1,4 +1,5 @@
 export { default as ModalPortal } from './bootstrap/ModalPortal'
+export { default as injectComponent } from './component/injectComponent'
 export { default as withComponentProxy } from './component/withComponentProxy'
 export { default as withMandatoryProp } from './component/withMandatoryProp'
 export { default as useBoolState } from './hook/useBoolState'
