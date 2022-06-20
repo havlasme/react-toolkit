@@ -11,10 +11,9 @@ const useMounted = function (callback = null) {
     const [mounted, set] = useState(false)
 
     useEffect(function () {
-        // run the callback
-        runEventCallback(callback)
-        // update the state to true
         set(true)
+        // run the callback
+        return runEventCallback(callback)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
