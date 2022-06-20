@@ -19,6 +19,9 @@
     "release": "semantic-release",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {
+    "prop-types": "^15.8.0"
+  },
   "devDependencies": {
     "@babel/cli": "^7.14.0",
     "@babel/core": "^7.14.0",
@@ -33,7 +36,6 @@
     "eslint": "^7.29.0",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "prop-types": "^15.7.0",
     "ramda": "^0.27.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
