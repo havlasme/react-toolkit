@@ -6,7 +6,21 @@ import runCallable from '../util/runCallable'
  *
  * @param {function} [callback=null]  a callback executed when the component is mounted
  * @return {boolean}
+ * @example
+ *
+ * const Component = function () {
+ *   const mounted = useMounted(function () {
+ *     console.log('executed only once at component mount')
+ *   })
+ *
+ *   return !mounted ? null : (
+ *     <div>
+ *       ...
+ *     </div>
+ *   )
+ * }
  */
+
 const useMounted = function (callback = null) {
     const [mounted, set] = useState(false)
 
