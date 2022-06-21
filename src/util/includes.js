@@ -5,11 +5,18 @@ const normalize = memoizeWith(identity, function (string) {
 })
 
 /**
- * Perform case, and diacritic insensitive search.
+ * Perform case, and diacritic insensitive text search.
+ * The normalization function is memoized.
  *
  * @param {string|null} haystack
  * @param {string|null} needle
  * @return {boolean}
+ * @example
+ *
+ * const haystack = 'Sample mixed-CASE hayStack'
+ *
+ * console.log(includes(haystack, 'čas'))
+ * // this should log true
  */
 const includes = function (haystack, needle) {
     return !isNil(haystack) && !isNil(needle)
