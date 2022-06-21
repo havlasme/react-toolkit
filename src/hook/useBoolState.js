@@ -4,17 +4,38 @@ import { useCallback, useState } from 'react'
 /**
  * The useBoolState hook.
  *
- * @param {boolean} initialValue
+ * @param {boolean} initialState  the initial state
  * @return {[boolean, function]}
+ * @example
+ *
+ * const Component = function () {
+ *   const [open, toggle] = useBoolState(false)
+ *
+ *   return (
+ *     <div>
+ *       <button type="button" onClick={toggle}>
+ *         Open / Close
+ *       </button>
+ *
+ *       {open &&
+ *         <div>
+ *           ...
+ *         </div>
+ *       }
+ *     </div>
+ *   )
+ * }
  */
-const useBoolState = function (initialValue) {
-    const [value, set] = useState(initialValue)
+
+const useBoolState = function (initialState) {
+    const [state, set] = useState(initialState)
 
     const toggle = useCallback(function (next) {
+        // set the next value when it's boolean, otherwise toggle current value
         set(is(Boolean, next) ? next : not)
     }, [set])
 
-    return [value, toggle]
+    return [state, toggle]
 }
 
 export default useBoolState
