@@ -6,10 +6,10 @@ import { useCallback, useEffect, useRef } from 'react'
  *
  * @param {function} callback  the callback
  * @param {number} timeout  the time (in milliseconds)
- * @param {boolean} [start=true]  do not initiate the timeout until set to true
+ * @param {boolean} [run=true]  do not initiate the timeout until set to true
  * @return {function}
  */
-const useTimeout = function (callback, timeout, start = true) {
+const useTimeout = function (callback, timeout, run = true) {
     const timeoutID = useRef(void 0)
 
     const cancel = useCallback(function () {
@@ -19,10 +19,12 @@ const useTimeout = function (callback, timeout, start = true) {
     }, [timeoutID])
 
     useEffect(function () {
+        if (!run) return void 0
+
         timeoutID.current = setTimeout(callback, Math.max(0, timeout))
 
         return cancel
-    }, [callback, start, timeout, timeoutID])
+    }, [callback, run, timeout, timeoutID])
 
     return cancel
 }
