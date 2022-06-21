@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 
 /**
  * The useNetworkState hook.
@@ -8,11 +8,11 @@ import { useCallback, useEffect, useState } from 'react'
 const useNetworkState = function () {
     const [state, set] = useState(navigator.onLine)
 
-    const onNetworkStateEvent = useCallback(function (event) {
-        set(event.type === 'online')
-    }, [set])
-
     useEffect(function () {
+        const onNetworkStateEvent = function (event) {
+            set(event.type === 'online')
+        }
+
         window.addEventListener('online', onNetworkStateEvent)
         window.addEventListener('offline', onNetworkStateEvent)
 
@@ -20,7 +20,7 @@ const useNetworkState = function () {
             window.removeEventListener('online', onNetworkStateEvent)
             window.removeEventListener('offline', onNetworkStateEvent)
         }
-    }, [onNetworkStateEvent])
+    }, [set])
 
     return state
 }
