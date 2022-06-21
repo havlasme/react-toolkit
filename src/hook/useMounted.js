@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import runEventCallback from '../util/runEventCallback'
+import runCallable from '../util/runCallable'
 
 /**
  * The useMounted hook.
@@ -13,7 +13,7 @@ const useMounted = function (callback = null) {
     useEffect(function () {
         set(true)
         // run the callback
-        return runEventCallback(callback)
+        return runCallable(callback)
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
