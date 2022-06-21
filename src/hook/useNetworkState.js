@@ -4,6 +4,17 @@ import { useEffect, useState } from 'react'
  * The useNetworkState hook.
  *
  * @return {boolean}
+ * @example
+ *
+ * const Component = function ({ children }) {
+ *   const online = useNetworkState()
+ *
+ *   return online ? children : (
+ *     <div>
+ *       ...
+ *     </div>
+ *   )
+ * }
  */
 const useNetworkState = function () {
     const [state, set] = useState(navigator.onLine)
