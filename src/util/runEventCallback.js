@@ -4,6 +4,8 @@
  * @param {*} callback
  * @param {*} rest
  * @return {*}
+ * @deprecated
+ * @see runCallable
  */
 const runEventCallback = function (callback, ...rest) {
     if (callback instanceof Function) {
