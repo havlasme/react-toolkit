@@ -5,6 +5,8 @@ import { useRef } from 'react'
  *
  * @param {function} callback  the callback
  * @return {Object}
+ * @deprecated
+ * @see useLatest
  */
 const useCallbackRef = function (callback) {
     const ref = useRef(callback)
