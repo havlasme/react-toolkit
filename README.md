@@ -4,7 +4,6 @@
 [![npm download][npm-download-image]][npm-download-link]
 [![Apache-2.0 license][license-image]][license-link]
 [![semantic release][semantic-release-image]][semantic-release-link]
-[![language grade][language-grade-image]][language-grade-link]
 
 React ToolKit.
 
@@ -22,5 +21,3 @@ npm install @havlasme/react-toolkit
 [license-link]: LICENSE
 [semantic-release-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square
 [semantic-release-link]: https://github.com/semantic-release/semantic-release
-[language-grade-image]: https://img.shields.io/lgtm/grade/javascript/g/havlasme/react-toolkit?style=flat-square
-[language-grade-link]: https://lgtm.com/projects/g/havlasme/react-toolkit/context:javascript
