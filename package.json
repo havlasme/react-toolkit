@@ -55,6 +55,11 @@
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.10.0"
   },
+  "peerDependenciesMeta": {
+    "react-router-dom": {
+      "optional": true
+    }
+  },
   "publishConfig": {
     "access": "public"
   }
