@@ -27,5 +27,8 @@ export default [
         sourcemap: true,
       },
     ],
+    watch: {
+      include: 'lib/**',
+    },
   },
 ]

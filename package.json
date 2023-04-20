@@ -17,6 +17,7 @@
   ],
   "browserslist": "> 0.25%, not dead",
   "scripts": {
+    "dev": "rollup -c -w",
     "build": "rollup -c",
     "prepack": "yarn run build",
     "lint": "eslint lib",
