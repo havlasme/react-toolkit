@@ -44,7 +44,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:16.14.0"],\
             ["react-dom", "virtual:97c9fe0f4faa3a89fd76e2b5c209a7aea25176c30f5a37698bc7e56a6233e5f030835b9963465b98e142eab1fbaaca54c0cc1e6993c2d5b01043aabba8ccb5ca#npm:16.14.0"],\
             ["react-router-dom", "virtual:97c9fe0f4faa3a89fd76e2b5c209a7aea25176c30f5a37698bc7e56a6233e5f030835b9963465b98e142eab1fbaaca54c0cc1e6993c2d5b01043aabba8ccb5ca#npm:6.10.0"],\
-            ["rxjs", "npm:6.6.7"],\
             ["semantic-release", "npm:17.4.7"]\
           ],\
           "linkType": "SOFT"\
@@ -2443,7 +2442,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["react", "npm:16.14.0"],\
             ["react-dom", "virtual:97c9fe0f4faa3a89fd76e2b5c209a7aea25176c30f5a37698bc7e56a6233e5f030835b9963465b98e142eab1fbaaca54c0cc1e6993c2d5b01043aabba8ccb5ca#npm:16.14.0"],\
             ["react-router-dom", "virtual:97c9fe0f4faa3a89fd76e2b5c209a7aea25176c30f5a37698bc7e56a6233e5f030835b9963465b98e142eab1fbaaca54c0cc1e6993c2d5b01043aabba8ccb5ca#npm:6.10.0"],\
-            ["rxjs", "npm:6.6.7"],\
             ["semantic-release", "npm:17.4.7"]\
           ],\
           "linkType": "SOFT"\
@@ -9023,16 +9021,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
-      ["rxjs", [\
-        ["npm:6.6.7", {\
-          "packageLocation": "./.yarn/cache/rxjs-npm-6.6.7-055046ea3c-bc334edef1.zip/node_modules/rxjs/",\
-          "packageDependencies": [\
-            ["rxjs", "npm:6.6.7"],\
-            ["tslib", "npm:1.14.1"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
       ["safe-buffer", [\
         ["npm:5.1.2", {\
           "packageLocation": "./.yarn/cache/safe-buffer-npm-5.1.2-c27fedf6c4-f2f1f7943c.zip/node_modules/safe-buffer/",\
@@ -9785,15 +9773,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/trim-newlines-npm-3.0.1-22f1f216de-b530f3fadf.zip/node_modules/trim-newlines/",\
           "packageDependencies": [\
             ["trim-newlines", "npm:3.0.1"]\
-          ],\
-          "linkType": "HARD"\
-        }]\
-      ]],\
-      ["tslib", [\
-        ["npm:1.14.1", {\
-          "packageLocation": "./.yarn/cache/tslib-npm-1.14.1-102499115e-dbe628ef87.zip/node_modules/tslib/",\
-          "packageDependencies": [\
-            ["tslib", "npm:1.14.1"]\
           ],\
           "linkType": "HARD"\
         }]\
