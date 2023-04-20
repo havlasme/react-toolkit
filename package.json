@@ -13,9 +13,9 @@
   "main": "./dist/index.js",
   "browserslist": "> 0.25%, not dead",
   "scripts": {
-    "build": "babel src --out-dir dist",
+    "build": "babel lib --out-dir dist",
     "prepack": "yarn run build",
-    "lint": "eslint src",
+    "lint": "eslint lib",
     "release": "semantic-release",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

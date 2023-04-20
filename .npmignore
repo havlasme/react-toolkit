@@ -9,4 +9,4 @@
 .gitlab-ci.yml
 babel.config.js
 release.config.js
-/src
+/lib
