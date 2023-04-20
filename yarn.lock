@@ -1421,7 +1421,6 @@ __metadata:
     eslint-plugin-react: ^7.24.0
     eslint-plugin-react-hooks: ^4.2.0
     nanoid: ^4.0.2
-    prop-types: ^15.8.0
     ramda: ^0.27.0
     react: ^16.0.0
     react-dom: ^16.0.0
@@ -6648,7 +6647,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:^15.6.2, prop-types@npm:^15.8.0, prop-types@npm:^15.8.1":
+"prop-types@npm:^15.6.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:

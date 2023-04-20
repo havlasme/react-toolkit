@@ -39,7 +39,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react", "virtual:97c9fe0f4faa3a89fd76e2b5c209a7aea25176c30f5a37698bc7e56a6233e5f030835b9963465b98e142eab1fbaaca54c0cc1e6993c2d5b01043aabba8ccb5ca#npm:7.32.2"],\
             ["eslint-plugin-react-hooks", "virtual:97c9fe0f4faa3a89fd76e2b5c209a7aea25176c30f5a37698bc7e56a6233e5f030835b9963465b98e142eab1fbaaca54c0cc1e6993c2d5b01043aabba8ccb5ca#npm:4.6.0"],\
             ["nanoid", "npm:4.0.2"],\
-            ["prop-types", "npm:15.8.1"],\
             ["ramda", "npm:0.27.2"],\
             ["react", "npm:16.14.0"],\
             ["react-dom", "virtual:97c9fe0f4faa3a89fd76e2b5c209a7aea25176c30f5a37698bc7e56a6233e5f030835b9963465b98e142eab1fbaaca54c0cc1e6993c2d5b01043aabba8ccb5ca#npm:16.14.0"],\
@@ -2437,7 +2436,6 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-react", "virtual:97c9fe0f4faa3a89fd76e2b5c209a7aea25176c30f5a37698bc7e56a6233e5f030835b9963465b98e142eab1fbaaca54c0cc1e6993c2d5b01043aabba8ccb5ca#npm:7.32.2"],\
             ["eslint-plugin-react-hooks", "virtual:97c9fe0f4faa3a89fd76e2b5c209a7aea25176c30f5a37698bc7e56a6233e5f030835b9963465b98e142eab1fbaaca54c0cc1e6993c2d5b01043aabba8ccb5ca#npm:4.6.0"],\
             ["nanoid", "npm:4.0.2"],\
-            ["prop-types", "npm:15.8.1"],\
             ["ramda", "npm:0.27.2"],\
             ["react", "npm:16.14.0"],\
             ["react-dom", "virtual:97c9fe0f4faa3a89fd76e2b5c209a7aea25176c30f5a37698bc7e56a6233e5f030835b9963465b98e142eab1fbaaca54c0cc1e6993c2d5b01043aabba8ccb5ca#npm:16.14.0"],\
