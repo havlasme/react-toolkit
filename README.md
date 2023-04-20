@@ -13,6 +13,10 @@ React ToolKit.
 npm install @havlasme/react-toolkit
 ```
 
+```
+yarn add @havlasme/react-toolkit
+```
+
 [npm-version-image]: https://img.shields.io/npm/v/@havlasme/react-toolkit.svg?style=flat-square
 [npm-version-link]: https://npmjs.org/package/@havlasme/react-toolkit
 [npm-download-image]: https://img.shields.io/npm/dm/@havlasme/react-toolkit.svg?style=flat-square
