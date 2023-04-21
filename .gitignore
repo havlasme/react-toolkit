@@ -1,9 +1,14 @@
 # intellij idea
 /.idea
 
-# npm, node, and yarn
+# build
 /dist
+
+# npm
 /node_modules
 /.yarn/unplugged
 /.yarn/build-state.yml
 /.yarn/install-state.gz
+
+# npm pack
+/havlasme-react-toolkit-*.tgz
