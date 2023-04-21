@@ -2,10 +2,6 @@ default:
   image: node:latest
   before_script:
   - yarn install --immutable
-  cache:
-    key: ${CI_COMMIT_REF_SLUG}
-    paths:
-    - .npm/
 
 workflow:
   rules:
