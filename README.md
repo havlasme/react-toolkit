@@ -1,4 +1,4 @@
-# react-toolkit
+# @havlasme/react-toolkit
 
 [![npm version][npm-version-image]][npm-version-link]
 [![npm download][npm-download-image]][npm-download-link]
@@ -15,6 +15,12 @@ npm install @havlasme/react-toolkit
 
 ```
 yarn add @havlasme/react-toolkit
+```
+
+# development
+
+```
+yarn dev
 ```
 
 [npm-version-image]: https://img.shields.io/npm/v/@havlasme/react-toolkit.svg?style=flat-square
