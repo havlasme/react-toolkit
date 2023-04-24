@@ -1,16 +1,21 @@
 import {suspensify, useBoolState} from '@havlasme/react-toolkit'
-import {Suspense} from 'react'
+import {isNil} from 'ramda'
+import {Suspense, useMemo} from 'react'
 
-const request = suspensify(new Promise(function (resolve) {
-  setTimeout(function () {
-    resolve(
-      'The `suspensify` function is a utility function that makes any asynchronous function suspensible.\n' +
-      'This means that you can use it to convert a function that uses promises into a function that can be used with the `Suspense` component.',
-    )
-  }, 5000)
-}))
+let localCache = null
 
 const SuspensifyComponent = function () {
+  const request = useMemo(function () {
+    return !isNil(localCache) ? localCache : localCache = suspensify(new Promise(function (resolve) {
+      setTimeout(function () {
+        resolve(
+          'The `suspensify` function is a utility function that makes any asynchronous function suspensible.\n' +
+          'This means that you can use it to convert a function that uses promises into a function that can be used with the `Suspense` component.',
+        )
+      }, 3000)
+    }))
+  }, [])
+
   return request.read()
 }
 
