@@ -20,7 +20,7 @@ ReactDOM.createRoot(
 ).render(
   <React.StrictMode>
     <div className="py-4 px-6 space-y-6 min-h-screen bg-neutral-50">
-      <div className="grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-4 md:gap-6 grid-cols-1 xl:grid-cols-2">
         <UseBoolStateTestBed/>
         <UseDocumentTitleTestBed/>
         <UseLatestTestBed/>
@@ -33,7 +33,7 @@ ReactDOM.createRoot(
         <UseWindowSizeTestBed/>
       </div>
 
-      <div className="grid gap-4 md:gap-6 grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
+      <div className="grid gap-4 md:gap-6 grid-cols-1 xl:grid-cols-2">
         <FocusEventTargetTestBed/>
         <IncludesTestBed/>
         <SuspensifyTestBed/>
