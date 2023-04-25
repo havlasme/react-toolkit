@@ -6,4 +6,7 @@ module.exports = {
     '@semantic-release/git',
     '@semantic-release/gitlab',
   ],
+  'branches': [
+    'main',
+  ],
 }
