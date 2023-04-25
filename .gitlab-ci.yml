@@ -11,7 +11,13 @@ variables:
   NPM_TOKEN: ${CI_JOB_TOKEN}
 
 stages:
+- test
 - release
+
+test:
+  stage: test
+  script:
+  - yarn test
 
 publish:
   stage: release
