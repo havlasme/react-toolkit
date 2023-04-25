@@ -3,7 +3,6 @@ module.exports = {
     [
       '@babel/env',
       {
-        'modules': false,
         'targets': '> 0.25%, not dead',
       },
     ],

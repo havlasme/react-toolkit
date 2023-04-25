@@ -18,11 +18,11 @@
   "browserslist": "> 0.25%, not dead",
   "scripts": {
     "dev": "rollup -c -w",
+    "test": "jest",
+    "lint": "eslint lib",
     "build": "rollup -c",
     "prepack": "yarn run build",
-    "lint": "eslint lib",
-    "release": "semantic-release",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "release": "semantic-release"
   },
   "dependencies": {
     "nanoid": "^4.0.0"
@@ -39,9 +39,14 @@
     "@semantic-release/git": "^10.0.0",
     "@semantic-release/gitlab": "^12.0.0",
     "@semantic-release/npm": "^10.0.0",
+    "@testing-library/react": "^14.0.0",
+    "babel-jest": "^29.5.0",
     "eslint": "^8.38.0",
     "eslint-plugin-react": "^7.32.0",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-testing-library": "^5.10.0",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
     "ramda": "^0.29.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
