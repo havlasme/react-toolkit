@@ -10,6 +10,7 @@ import UseNanoIdTestBed from './hook/UseNanoId'
 import UseNetworkStateTestBed from './hook/UseNetworkState'
 import UseSearchStateTestBed from './hook/UseSearchState'
 import UseSetStateTestBed from './hook/UseSetState'
+import UseTimeoutTestBed from './hook/UseTimeout'
 import UseWindowSizeTestBed from './hook/UseWindowSize'
 import FocusEventTargetTestBed from './util/FocusEventTarget'
 import IncludesTestBed from './util/Includes'
@@ -30,6 +31,7 @@ ReactDOM.createRoot(
         <UseNetworkStateTestBed/>
         <UseSearchStateTestBed/>
         <UseSetStateTestBed/>
+        <UseTimeoutTestBed/>
         <UseWindowSizeTestBed/>
       </div>
 
