@@ -1,5 +1,6 @@
 # build and pack
 /dist
+/public
 /havlasme-react-toolkit-*.tgz
 
 # npm and yarn

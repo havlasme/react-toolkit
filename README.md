@@ -7,7 +7,7 @@
 
 React ToolKit.
 
-# installation
+## installation
 
 ```
 npm install @havlasme/react-toolkit
@@ -17,10 +17,16 @@ npm install @havlasme/react-toolkit
 yarn add @havlasme/react-toolkit
 ```
 
-# development
+## development
 
 ```
 yarn run dev
+```
+
+## storybook
+
+```
+yarn run storybook
 ```
 
 [npm-version-image]: https://img.shields.io/npm/v/@havlasme/react-toolkit.svg?style=flat-square

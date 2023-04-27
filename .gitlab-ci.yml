@@ -26,3 +26,13 @@ publish:
   - yarn run release
   rules:
   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+
+pages:
+  stage: release
+  script:
+  - yarn run storybook:build
+  artifacts:
+    paths:
+    - public
+  rules:
+  - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
