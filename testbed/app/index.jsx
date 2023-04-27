@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import './main.css'
 import UseBoolStateTestBed from './hook/UseBoolState'
 import UseDocumentTitleTestBed from './hook/UseDocumentTitle'
+import UseIntervalTestBed from './hook/UseInterval'
 import UseLatestTestBed from './hook/UseLatest'
 import UseMountedTestBed from './hook/UseMounted'
 import UseMountPointTestBed from './hook/UseMountPoint'
@@ -24,6 +25,7 @@ ReactDOM.createRoot(
       <div className="grid gap-4 md:gap-6 grid-cols-1 xl:grid-cols-2">
         <UseBoolStateTestBed/>
         <UseDocumentTitleTestBed/>
+        <UseIntervalTestBed/>
         <UseLatestTestBed/>
         <UseMountedTestBed/>
         <UseMountPointTestBed/>
