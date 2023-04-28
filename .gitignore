@@ -1,17 +1,15 @@
-# intellij idea
-/.idea
-
-# build
+# build and pack
 /dist
+/havlasme-react-toolkit-*.tgz
 
-# npm
-/node_modules
+# npm and yarn
 /.yarn/unplugged
 /.yarn/build-state.yml
 /.yarn/install-state.gz
+/node_modules
 
-# npm pack
-/havlasme-react-toolkit-*.tgz
-
-# jest
+# jest and coverage
 /coverage
+
+# intellij idea
+/.idea

@@ -10,12 +10,11 @@
   "license": "Apache-2.0",
   "homepage": "https://gitlab.com/havlas.me/react-toolkit",
   "repository": "https://gitlab.com/havlas.me/react-toolkit",
-  "main": "dist/index.min.js",
-  "module": "dist/index.min.mjs",
+  "main": "dist/lib/index.js",
+  "module": "dist/es/index.js",
   "files": [
-    "dist"
+    "/dist"
   ],
-  "browserslist": "> 0.25%, not dead",
   "scripts": {
     "dev": "rollup -c -w",
     "test": "jest",
