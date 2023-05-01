@@ -20,7 +20,7 @@ yarn add @havlasme/react-toolkit
 # development
 
 ```
-yarn dev
+yarn run dev
 ```
 
 [npm-version-image]: https://img.shields.io/npm/v/@havlasme/react-toolkit.svg?style=flat-square
