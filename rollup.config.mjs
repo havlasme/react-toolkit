@@ -9,7 +9,7 @@ export default [
     input: 'lib/index.js',
     plugins: [
       externals(),
-      nodeResolve(),
+      nodeResolve({extensions: ['.js', '.jsx', '.json']}),
       commonjs(),
       terser(),
     ],
