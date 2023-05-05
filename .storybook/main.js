@@ -11,16 +11,12 @@ const config = {
     ),
     {
       name: '@storybook/addon-styling',
-      options: {
-        postCss: true,
-      },
     },
   ],
   framework: {
     name: path.dirname(
       require.resolve(path.join('@storybook/react-vite', 'package.json')),
     ),
-    options: {},
   },
   docs: {
     autodocs: 'tag',
