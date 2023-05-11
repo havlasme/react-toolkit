@@ -4,25 +4,17 @@ import useInterval from './useInterval'
 const UseIntervalTestBed = function ({delay}) {
   const [state, setState] = useState('interval scheduled...')
   const [count, setCount] = useState(0)
-  const [resetId, setResetId] = useState(0)
 
   const cancelInterval = useInterval(useCallback(
     function () {
       setCount(state => state + 1)
-    }, [setCount, resetId]), delay)
+    }, [setCount]), delay)
 
   const onClickCallback = useCallback(
     function () {
       cancelInterval()
       setState('interval cancelled!')
     }, [cancelInterval, setState])
-
-  const onResetCallback = useCallback(
-    function () {
-      setState('interval scheduled...')
-      setCount(0)
-      setResetId(state => state + 1)
-    }, [])
 
   return (
     <div className="space-y-4">
@@ -31,12 +23,8 @@ const UseIntervalTestBed = function ({delay}) {
       </div>
 
       <div className="space-x-2">
-        <button disabled={state.includes('!')} type="button" onClick={onClickCallback} className="py-1.5 px-6 uppercase bg-neutral-100 border border-neutral-400 rounded-lg disabled:opacity-50">
-          Cancel Interval
-        </button>
-
-        <button type="button" onClick={onResetCallback} className="py-1.5 px-6 uppercase bg-neutral-100 border border-neutral-400 rounded-lg">
-          Reset
+        <button disabled={state.includes('!')} type="button" onClick={onClickCallback} className="py-1 px-4 text-neutral-600 font-medium border rounded-md">
+          Cancel interval
         </button>
       </div>
     </div>

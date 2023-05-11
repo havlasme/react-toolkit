@@ -3,7 +3,9 @@ import voidable from './voidable'
 const VoidableTestBed = function ({value, toVoid}) {
   return (
     <div className="space-y-4">
-      {String(voidable(value, toVoid))}
+      <div className="space-y-2">
+        {String(voidable(value, toVoid))}
+      </div>
     </div>
   )
 }

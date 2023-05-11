@@ -1,11 +1,11 @@
 import useStyleSheet from './useStyleSheet'
 
-const UseStyleSheetTestbed = function ({location}) {
-  const state = useStyleSheet(location)
+const UseStyleSheetTestbed = function ({location, destroyOnUnmount}) {
+  const state = useStyleSheet(location, {destroyOnUnmount})
 
   return (
     <div className="space-y-4">
-      <div className="custom-stylesheet">
+      <div className="space-y-2 useStyleSheet-testbed-custom">
         current state: {String(state)}
       </div>
     </div>

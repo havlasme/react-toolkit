@@ -23,12 +23,12 @@ const UseDocumentTitleTestBed = function ({restoreOnUnmount, title}) {
         <Component restoreOnUnmount={restoreOnUnmount} title={title}/>
       ) : null}
 
-      <div>
+      <div className="space-y-2">
         current `document.title`: <strong>{latestDocumentTitle}</strong>
       </div>
 
       <div className="space-x-2">
-        <button type="button" onClick={setMounted} className="py-1.5 px-6 uppercase bg-neutral-100 border border-neutral-400 rounded-lg">
+        <button type="button" onClick={setMounted} className="py-1 px-4 text-neutral-600 font-medium border rounded-md">
           {mounted ? 'Unmount' : 'Mount'}
         </button>
       </div>

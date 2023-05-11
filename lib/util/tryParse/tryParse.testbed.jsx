@@ -7,8 +7,10 @@ const TryParseTestBed = function ({jsonString}) {
 
   return (
     <div className="space-y-4">
-      {typeof parsedValue}: {String(parsedValue)}<br/>
-      <small>@see console.log</small>
+      <div className="space-y-2">
+        {typeof parsedValue}: {String(parsedValue)}<br/>
+        <small>@see console.log</small>
+      </div>
     </div>
   )
 }

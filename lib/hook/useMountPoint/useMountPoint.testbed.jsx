@@ -6,11 +6,9 @@ const Component = function ({open, onClose}) {
   const domNode = useMountPoint(
     function () {
       const element = document.createElement('div')
-
       element.classList.add('fixed')
       element.classList.add('inset-0')
       element.classList.add('z-50')
-
       return element
     })
 
@@ -25,7 +23,7 @@ const Component = function ({open, onClose}) {
         </p>
 
         <div className="flex py-2 px-2 justify-end">
-          <button type="button" onClick={onClose} className="py-1.5 px-6 uppercase bg-neutral-100 border border-neutral-400 rounded-lg">
+          <button type="button" onClick={onClose} className="py-1 px-4 text-neutral-600 font-medium border rounded-md">
             Close
           </button>
         </div>
@@ -44,8 +42,8 @@ const UseMountPointTestBed = function () {
       ) : null}
 
       <div className="space-x-2">
-        <button type="button" onClick={setState} className="py-1.5 px-6 uppercase bg-neutral-100 border border-neutral-400 rounded-lg">
-          {state ? 'Close Modal' : 'Open Modal'}
+        <button type="button" onClick={setState} className="py-1 px-4 text-neutral-600 font-medium border rounded-md">
+          {state ? 'Close modal' : 'Open modal'}
         </button>
       </div>
     </div>

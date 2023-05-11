@@ -18,17 +18,17 @@ const UseSetStateTestBed = function () {
 
   return (
     <div className="space-y-4">
-      <div>
+      <div className="space-y-2">
         state: {JSON.stringify(state)}
       </div>
 
       <div className="space-x-2">
-        <button name="count" type="button" onClick={onClickCallback} className="py-1.5 px-6 uppercase bg-neutral-100 border border-neutral-400 rounded-lg">
-          Update `count`
+        <button name="count" type="button" onClick={onClickCallback} className="py-1 px-4 text-neutral-600 font-medium border rounded-md">
+          Update count
         </button>
 
-        <button name="sample" type="button" onClick={onClickConstantCallback} className="py-1.5 px-6 uppercase bg-neutral-100 border border-neutral-400 rounded-lg">
-          Update `sample`
+        <button name="sample" type="button" onClick={onClickConstantCallback} className="py-1 px-4 text-neutral-600 font-medium border rounded-md">
+          Update sample
         </button>
       </div>
     </div>

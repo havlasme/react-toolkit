@@ -20,7 +20,7 @@ const LastEventCallbackTestBed = function ({blurActiveElement, preventDefault}) 
       </div>
 
       <div className="space-x-2">
-        <button type="submit" className="py-1.5 px-6 uppercase bg-neutral-100 border border-neutral-400 rounded-lg">
+        <button type="submit" className="py-1 px-4 text-neutral-600 font-medium border rounded-md">
           Submit
         </button>
       </div>

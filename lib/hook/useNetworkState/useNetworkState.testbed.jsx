@@ -6,7 +6,7 @@ const UseNetworkStateTestBed = function () {
 
   return (
     <div className="space-y-4">
-      <div>
+      <div className="space-y-2">
         current state: <strong className={className}>{String(networkState)}</strong>
       </div>
     </div>
