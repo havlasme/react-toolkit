@@ -11,6 +11,7 @@ const useFullScreen = function () {
   // an element to be displayed in fullscreen mode.
   const element = useRef(null)
   // the fullscreen state.
+  // `true` when `element` is in fullscreen mode.
   const [state, setState] = useBoolState(false)
 
   // the request callback.
