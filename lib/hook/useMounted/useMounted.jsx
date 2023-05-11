@@ -8,15 +8,17 @@ import runCallable from '../../util/runCallable'
  * @return {boolean}
  */
 const useMounted = function (callback) {
-  const [mounted, set] = useState(false)
+  // the state. is the component mounted?
+  const [state, setState] = useState(false)
 
-  useEffect(function () {
-    set(true)
-    return runCallable(callback)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  useEffect(
+    function () {
+      setState(true)
+      return runCallable(callback)
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [])
 
-  return mounted
+  return state
 }
 
 export default useMounted
