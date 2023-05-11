@@ -11,15 +11,16 @@ const useMountPoint = function (createDomNode) {
     return createDomNode()
   }, [createDomNode])
 
-  useEffect(function () {
-    document.body.appendChild(domNode)
+  useEffect(
+    function () {
+      document.body.appendChild(domNode)
 
-    return function () {
-      if (document.body.contains(domNode)) {
-        document.body.removeChild(domNode)
+      return function () {
+        if (document.body.contains(domNode)) {
+          document.body.removeChild(domNode)
+        }
       }
-    }
-  }, [domNode])
+    }, [domNode])
 
   return domNode
 }
