@@ -28,7 +28,6 @@ const useWindowSize = function () {
       if (!equals(memo, snapshot)) {
         memo = snapshot
       }
-
       return memo
     }
   }, [])
