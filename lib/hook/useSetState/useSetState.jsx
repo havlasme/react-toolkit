@@ -8,16 +8,19 @@ import runCallable from '../../util/runCallable'
  * @return {[Object, function]}
  */
 const useSetState = function (initialState = {}) {
+  // the state. must be an object.
   const [state, setState] = useState(initialState)
 
-  const mergeState = useCallback(function (next) {
-    setState(function (state) {
-      return {
-        ...state,
-        ...runCallable(next, state),
-      }
-    })
-  }, [setState])
+  // the merge state callback.
+  const mergeState = useCallback(
+    function (next) {
+      setState(function (state) {
+        return {
+          ...state,
+          ...runCallable(next, state),
+        }
+      })
+    }, [setState])
 
   return [state, mergeState]
 }
