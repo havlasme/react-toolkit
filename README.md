@@ -4,6 +4,7 @@
 [![npm download][npm-download-image]][npm-download-link]
 [![Apache-2.0 license][license-image]][license-link]
 [![semantic release][semantic-release-image]][semantic-release-link]
+[![pipeline status][pipeline-image]][pipeline-link]
 
 React ToolKit.
 
@@ -37,3 +38,5 @@ yarn run storybook
 [license-link]: LICENSE
 [semantic-release-image]: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg?style=flat-square
 [semantic-release-link]: https://github.com/semantic-release/semantic-release
+[pipeline-image]: https://img.shields.io/gitlab/pipeline-status/havlas.me/react-toolkit?branch=main&style=flat-square
+[pipeline-link]: https://gitlab.com/havlas.me/react-toolkit/-/pipelines?ref=main
