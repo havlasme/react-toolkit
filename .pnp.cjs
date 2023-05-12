@@ -57,6 +57,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-testing-library", "virtual:97c9fe0f4faa3a89fd76e2b5c209a7aea25176c30f5a37698bc7e56a6233e5f030835b9963465b98e142eab1fbaaca54c0cc1e6993c2d5b01043aabba8ccb5ca#npm:5.10.3"],\
             ["jest", "virtual:97c9fe0f4faa3a89fd76e2b5c209a7aea25176c30f5a37698bc7e56a6233e5f030835b9963465b98e142eab1fbaaca54c0cc1e6993c2d5b01043aabba8ccb5ca#npm:29.5.0"],\
             ["jest-environment-jsdom", "virtual:97c9fe0f4faa3a89fd76e2b5c209a7aea25176c30f5a37698bc7e56a6233e5f030835b9963465b98e142eab1fbaaca54c0cc1e6993c2d5b01043aabba8ccb5ca#npm:29.5.0"],\
+            ["jest-junit", "npm:16.0.0"],\
             ["nanoid", "npm:4.0.2"],\
             ["postcss", "npm:8.4.23"],\
             ["prop-types", "npm:15.8.1"],\
@@ -4656,6 +4657,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["eslint-plugin-testing-library", "virtual:97c9fe0f4faa3a89fd76e2b5c209a7aea25176c30f5a37698bc7e56a6233e5f030835b9963465b98e142eab1fbaaca54c0cc1e6993c2d5b01043aabba8ccb5ca#npm:5.10.3"],\
             ["jest", "virtual:97c9fe0f4faa3a89fd76e2b5c209a7aea25176c30f5a37698bc7e56a6233e5f030835b9963465b98e142eab1fbaaca54c0cc1e6993c2d5b01043aabba8ccb5ca#npm:29.5.0"],\
             ["jest-environment-jsdom", "virtual:97c9fe0f4faa3a89fd76e2b5c209a7aea25176c30f5a37698bc7e56a6233e5f030835b9963465b98e142eab1fbaaca54c0cc1e6993c2d5b01043aabba8ccb5ca#npm:29.5.0"],\
+            ["jest-junit", "npm:16.0.0"],\
             ["nanoid", "npm:4.0.2"],\
             ["postcss", "npm:8.4.23"],\
             ["prop-types", "npm:15.8.1"],\
@@ -13836,6 +13838,19 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["jest-junit", [\
+        ["npm:16.0.0", {\
+          "packageLocation": "./.yarn/cache/jest-junit-npm-16.0.0-39a50dfe1a-412aa4bfee.zip/node_modules/jest-junit/",\
+          "packageDependencies": [\
+            ["jest-junit", "npm:16.0.0"],\
+            ["mkdirp", "npm:1.0.4"],\
+            ["strip-ansi", "npm:6.0.1"],\
+            ["uuid", "npm:8.3.2"],\
+            ["xml", "npm:1.0.1"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["jest-leak-detector", [\
         ["npm:29.5.0", {\
           "packageLocation": "./.yarn/cache/jest-leak-detector-npm-29.5.0-5ce1db8235-0fb845da7a.zip/node_modules/jest-leak-detector/",\
@@ -19907,6 +19922,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["uuid", [\
+        ["npm:8.3.2", {\
+          "packageLocation": "./.yarn/cache/uuid-npm-8.3.2-eca0baba53-5575a8a75c.zip/node_modules/uuid/",\
+          "packageDependencies": [\
+            ["uuid", "npm:8.3.2"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
         ["npm:9.0.0", {\
           "packageLocation": "./.yarn/cache/uuid-npm-9.0.0-46c41e3e43-8dd2c83c43.zip/node_modules/uuid/",\
           "packageDependencies": [\
@@ -20320,6 +20342,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "@types/utf-8-validate",\
             "bufferutil",\
             "utf-8-validate"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["xml", [\
+        ["npm:1.0.1", {\
+          "packageLocation": "./.yarn/cache/xml-npm-1.0.1-f50a7aeb8e-11b5545ef3.zip/node_modules/xml/",\
+          "packageDependencies": [\
+            ["xml", "npm:1.0.1"]\
           ],\
           "linkType": "HARD"\
         }]\

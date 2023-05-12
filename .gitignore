@@ -11,6 +11,7 @@
 
 # jest and coverage
 /coverage
+/junit.xml
 
 # intellij idea
 /.idea

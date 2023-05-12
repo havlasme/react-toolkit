@@ -17,7 +17,15 @@ stages:
 test:
   stage: test
   script:
-  - yarn test
+  - yarn run test:ci
+  artifacts:
+    paths:
+    - coverage/
+    reports:
+      coverage_report:
+        coverage_format: cobertura
+        path: coverage/cobertura-coverage.xml
+  coverage: /All\sfiles.*?\s+(\d+.\d+)/
 
 publish:
   stage: release
@@ -33,6 +41,6 @@ pages:
   - yarn run storybook:build
   artifacts:
     paths:
-    - public
+    - public/
   rules:
   - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
