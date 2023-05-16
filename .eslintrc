@@ -11,6 +11,10 @@
     "plugin:react-hooks/recommended",
     "plugin:testing-library/react"
   ],
+  "rules": {
+    "react/prop-types": "off",
+    "react/react-in-jsx-scope": "off"
+  },
   "parserOptions": {
     "ecmaVersion": 2020,
     "sourceType": "module"
