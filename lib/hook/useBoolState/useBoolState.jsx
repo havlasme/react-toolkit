@@ -10,18 +10,17 @@ const useBoolState = function (initialState) {
   if (typeof initialState !== 'boolean') {
     throw new TypeError('initialState must be a boolean.')
   }
-
   // the state. must be a `boolean` value.
   const [state, setState] = useState(initialState)
 
   // the state update callback.
   // set the state to a boolean value.
-  // toggle current state value when `next` is not set (or non-boolean).
+  // toggle current value when `nextState` is not set (or non-boolean).
   const setBoolState = useCallback(
-    function (next) {
+    function (nextState) {
       setState(function (state) {
-        return typeof next === 'boolean'
-          ? next : !state
+        return typeof nextState === 'boolean'
+          ? nextState : !state
       })
     }, [setState])
 
