@@ -1,4 +1,5 @@
 import commonjs from '@rollup/plugin-commonjs'
+import babel from '@rollup/plugin-babel'
 import {nodeResolve} from '@rollup/plugin-node-resolve'
 import terser from '@rollup/plugin-terser'
 import externals from 'rollup-plugin-node-externals'
@@ -10,6 +11,7 @@ export default [
     plugins: [
       externals(),
       nodeResolve({extensions: ['.js', '.jsx', '.json']}),
+      babel(),
       commonjs(),
       terser(),
     ],
