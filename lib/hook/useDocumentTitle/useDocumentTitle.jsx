@@ -15,11 +15,12 @@ const useDocumentTitle = function (title, option = DEFAULT_OPTION_OBJECT) {
   if (typeof title !== 'string' && title !== null) {
     throw new TypeError('title must be a string|null.')
   }
+  // destruct the option object.
   const {restoreOnUnmount = true} = option
-
   // the previous title ref. to be restored on unmount.
   const prevTitle = useRef(document.title)
 
+  // update the document title.
   useLayoutEffect(
     function () {
       if (typeof title === 'string') {
@@ -27,6 +28,7 @@ const useDocumentTitle = function (title, option = DEFAULT_OPTION_OBJECT) {
       }
     }, [title])
 
+  // restore the previous title on unmount.
   useLayoutEffect(
     function () {
       if (restoreOnUnmount === true) {
