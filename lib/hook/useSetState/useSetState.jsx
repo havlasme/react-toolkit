@@ -13,11 +13,11 @@ const useSetState = function (initialState = {}) {
 
   // the merge state callback.
   const mergeState = useCallback(
-    function (next) {
+    function (nextState) {
       setState(function (state) {
         return {
           ...state,
-          ...runCallable(next, state),
+          ...runCallable(nextState, state),
         }
       })
     }, [setState])
