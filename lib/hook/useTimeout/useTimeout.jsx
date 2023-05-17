@@ -20,6 +20,7 @@ const useTimeout = function (callback, delay = null) {
       }
     }, [])
 
+  // schedule the timeout.
   useLayoutEffect(
     function () {
       if (delay !== null) {
