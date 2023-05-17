@@ -20,6 +20,7 @@ const useInterval = function (callback, delay = null) {
       }
     }, [])
 
+  // schedule the interval.
   useLayoutEffect(
     function () {
       if (delay !== null) {
