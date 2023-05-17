@@ -24,16 +24,15 @@ const useStyleSheet = function (location, option = DEFAULT_OPTION_OBJECT) {
   const {destroyOnUnmount = true, stylesheet = null} = option
 
   // the stylesheet state ('loading', 'ready', 'error', `null`).
+  // set to `null` when location is invalid.
   const [state, setState] = useState(
     function () {
-      // set to `null` when location is invalid.
       if (typeof location !== 'string') {
         return null
       }
-
       // set to the cached (at element dataset) state.
+      // set to 'loading' when the element is not mounted, yet.
       return getStyleSheetNode(location)?.dataset?.state
-        // the element is not mounted, yet.
         ?? 'loading'
     })
 
