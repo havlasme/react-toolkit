@@ -3,14 +3,20 @@ import UseSearchStateTestBed from './useSearchState.testbed'
 import UseSearchStateTestBedJSX from './useSearchState.testbed?raw'
 
 /**
- * The `useSearchState` hook is designed to be used with `react-router-dom`.
- * This hook allows for the easy manipulation of query string parameters in the URL.
- * The hook takes a single argument, `key`, which is the key of the query string parameter to be manipulated.
+ * The `useSearchState` is a custom React Hook that allows for the easy manipulation of query string parameters in the URL.
+ * The hook takes a key argument which is the key of the query string parameter and returns a tuple with the current value and a function to update it.
+ * The hook is designed to be used with `react-router-dom` - must be installed as project dependency.
+ *
+ * ```jsx
+ * const [state, setState] = useSearchState(paramName)
+ * ```
  *
  * ```jsdoc
  * @param {string} key  the key.
  * @return {Array}
  * ```
+ *
+ * ### Example
  *
  * ```jsx
  * const Component = function () {

@@ -10,18 +10,19 @@ import {useSearchParams} from 'react-router-dom'
  */
 const useSearchState = function (key) {
   // @see https://reactrouter.com/en/main/hooks/use-search-params
-  const [state, set] = useSearchParams()
+  const [state, setState] = useSearchParams()
 
-  // update the value at `key`. keep the rest intact
-  const update = useCallback(function (next) {
-    set(function (prev) {
-      prev.set(key, next)
-      return prev
-    })
-    // the `set` must be a dependency to keep `prev` value synchronized
-  }, [key, set])
+  // update the value at `key`. keep the rest intact.
+  const setSearchState = useCallback(
+    function (nextState) {
+      setState(function (state) {
+        state.set(key, nextState)
+        return state
+      })
+      // the `setState` must be a dependency to keep `state` value synchronized!
+    }, [key, setState])
 
-  return [state.get(key), update]
+  return [state.get(key), setSearchState]
 }
 
 export default useSearchState
