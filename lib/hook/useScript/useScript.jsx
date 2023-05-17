@@ -24,16 +24,15 @@ const useScript = function (location, option = DEFAULT_OPTION_OBJECT) {
   const {destroyOnUnmount = true, script = null} = option
 
   // the script state ('loading', 'ready', 'error', `null`).
+  // set to `null` when location is invalid.
   const [state, setState] = useState(
     function () {
-      // set to `null` when location is invalid.
       if (typeof location !== 'string') {
         return null
       }
-
       // set to the cached (at element dataset) state.
+      // set to 'loading' when the element is not mounted, yet.
       return getScriptNode(location)?.dataset?.state
-        // the element is not mounted, yet.
         ?? 'loading'
     })
 
