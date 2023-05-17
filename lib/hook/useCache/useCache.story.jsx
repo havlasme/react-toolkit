@@ -56,7 +56,7 @@ import UseCacheTestBedJSX from './useCache.testbed?raw'
  * ```
  */
 export default {
-  title: 'State/useCache',
+  title: 'Hook/useCache',
   component: UseCacheTestBed,
   tags: ['autodocs'],
   decorators: [

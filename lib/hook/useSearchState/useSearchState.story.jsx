@@ -32,7 +32,7 @@ import UseSearchStateTestBedJSX from './useSearchState.testbed?raw'
  * ```
  */
 export default {
-  title: 'State/useSearchState',
+  title: 'Hook/useSearchState',
   component: UseSearchStateTestBed,
   tags: ['autodocs'],
   decorators: [
