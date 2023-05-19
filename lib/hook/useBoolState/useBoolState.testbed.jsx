@@ -7,7 +7,7 @@ const UseBoolStateTestBed = function ({initialState}) {
   return (
     <div className="space-y-4">
       <div className="space-y-2">
-        current state: <strong className={className}>{state.toString()}</strong>
+        current state: <strong className={className}>{String(state)}</strong>
       </div>
 
       <div className="space-x-2">
