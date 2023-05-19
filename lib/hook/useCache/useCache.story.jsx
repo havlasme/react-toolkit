@@ -1,6 +1,7 @@
 import {hookTestBedControl} from '../../../.storybook/component'
 import CacheProvider from './CacheProvider'
 import createCache from './createCache'
+import createCacheSignal from './createCacheSignal'
 import UseCacheTestBed from './useCache.testbed'
 import UseCacheTestBedJSX from './useCache.testbed?raw'
 
@@ -11,7 +12,7 @@ import UseCacheTestBedJSX from './useCache.testbed?raw'
  * Additionally, the hook utilizes signaling to ensure synchronization between instances that are associated with the same cache key within the scope of the `CacheContext`.
  *
  * ```jsx
- * const [state, setState] = useCache('key')
+ * const [state, setState] = useCache(key)
  * ```
  *
  * ```jsdoc
@@ -72,6 +73,7 @@ export default {
 }
 
 const cache = createCache()
+const signal = createCacheSignal()
 
 /**
  * ## The TestBed
@@ -80,7 +82,7 @@ export const HookTestBed = {
   decorators: [
     function (Component) {
       return (
-        <CacheProvider cache={cache}>
+        <CacheProvider cache={cache} signal={signal}>
           <Component/>
         </CacheProvider>
       )

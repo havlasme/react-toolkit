@@ -11,12 +11,20 @@ const useCache = function (key) {
   if (typeof key !== 'string') {
     throw new TypeError('key must be a string.')
   }
+
   // the cache and the signal.
   const [cache, signal] = useContext(CacheContext)
+  // the hook must be used in a CacheContext.
+  if (cache === null) {
+    throw new TypeError('cache is not initialized.')
+  }
+  if (signal === null) {
+    throw new TypeError('signal is not initialized.')
+  }
 
   // the state.
-  // initialize with the cached value,
-  // and subscribe to the cache update event.
+  // * initialize with the cached value.
+  // * subscribe to the cache update event.
   const state = useSyncExternalStore(
     useCallback(
       function (callback) {
@@ -32,7 +40,7 @@ const useCache = function (key) {
       }, [cache, key]))
 
   // the state update callback.
-  // update the cache and publish an event.
+  // * update the cache and publish an event.
   const setState = useCallback(
     function (value) {
       cache.set(key, value)

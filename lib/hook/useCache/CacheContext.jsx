@@ -1,8 +1,6 @@
 import {createContext} from 'react'
-import createCache from './createCache'
-import createCacheSignal from './createCacheSignal'
 
-// the cache context. tuple of cache and signal.
-const CacheContext = createContext([createCache(), createCacheSignal()])
+// the cache context. tuple with the cache and the signal.
+const CacheContext = createContext([null, null])
 
 export default CacheContext

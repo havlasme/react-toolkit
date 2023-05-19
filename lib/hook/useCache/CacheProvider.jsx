@@ -1,6 +1,5 @@
 import {useMemo} from 'react'
 import CacheContext from './CacheContext'
-import createCacheSignal from './createCacheSignal'
 
 /**
  * The CacheProvider component.
@@ -9,11 +8,12 @@ import createCacheSignal from './createCacheSignal'
  * @component
  */
 const CacheProvider = function ({cache, children, signal}) {
-  // the cache and the signal value.
+  // the cache and the signal instance.
   // memoized to avoid unnecessary re-rendering.
-  const value = useMemo(function () {
-    return [cache, signal ?? createCacheSignal()]
-  }, [cache, signal])
+  const value = useMemo(
+    function () {
+      return [cache, signal]
+    }, [cache, signal])
 
   return (
     <CacheContext.Provider value={value}>
