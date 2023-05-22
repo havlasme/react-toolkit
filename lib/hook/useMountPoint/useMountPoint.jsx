@@ -1,4 +1,4 @@
-import {useEffect, useMemo} from 'react'
+import {useInsertionEffect, useMemo} from 'react'
 
 /**
  * The useMountPoint hook.
@@ -7,11 +7,12 @@ import {useEffect, useMemo} from 'react'
  * @return {any}
  */
 const useMountPoint = function (createDomNode) {
-  const domNode = useMemo(function () {
-    return createDomNode()
-  }, [createDomNode])
+  const domNode = useMemo(
+    function () {
+      return createDomNode()
+    }, [createDomNode])
 
-  useEffect(
+  useInsertionEffect(
     function () {
       document.body.appendChild(domNode)
 
