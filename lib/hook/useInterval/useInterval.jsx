@@ -9,14 +9,14 @@ import {useCallback, useLayoutEffect, useRef} from 'react'
  */
 const useInterval = function (callback, delay = null) {
   // the interval instance ref.
-  const interval = useRef(null)
+  const intervalRef = useRef(null)
 
   // the cancel interval callback.
   const cancelInterval = useCallback(
     function () {
-      if (interval.current !== null) {
-        clearInterval(interval.current)
-        interval.current = null
+      if (intervalRef.current !== null) {
+        clearInterval(intervalRef.current)
+        intervalRef.current = null
       }
     }, [])
 
@@ -24,7 +24,7 @@ const useInterval = function (callback, delay = null) {
   useLayoutEffect(
     function () {
       if (delay !== null) {
-        interval.current = setInterval(callback, delay)
+        intervalRef.current = setInterval(callback, delay)
         return cancelInterval
       }
     }, [callback, delay])
