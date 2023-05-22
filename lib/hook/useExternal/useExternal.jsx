@@ -15,6 +15,9 @@ const DEFAULT_OPTION_OBJECT = {
  * @return {string|null}
  */
 const useExternal = function (createDomNode, option = DEFAULT_OPTION_OBJECT) {
+  if (typeof createDomNode !== 'function') {
+    throw new TypeError('createDomNode must be a function.')
+  }
   const {removeOnUnmount = true, usesSuspense = false} = option
 
   // create a dom node.
@@ -72,7 +75,6 @@ const useExternal = function (createDomNode, option = DEFAULT_OPTION_OBJECT) {
   }
 
   // update the dom node state.
-  // NOTE: insertion effect must not schedule a state update.
   useLayoutEffect(
     function () {
       if (domNode === null) {
