@@ -1,4 +1,5 @@
 import {useCallback, useState} from 'react'
+import runCallable from '../../util/runCallable'
 
 /**
  * The useBoolState hook.
@@ -15,15 +16,13 @@ const useBoolState = function (initialState) {
   const [state, setState] = useState(initialState)
 
   // the state update callback.
-  // * set the state to a boolean value.
-  // * toggle current value when `nextState` is not set (or non-boolean).
   const setBoolState = useCallback(
     function (nextState) {
-      if (typeof nextState === 'boolean') {
-        setState(nextState)
-        return void 0
-      }
       setState(function (state) {
+        const newState = runCallable(nextState, state)
+        if (typeof newState === 'boolean') {
+          return newState
+        }
         return !state
       })
     }, [setState])
