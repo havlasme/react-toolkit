@@ -1,7 +1,7 @@
 import useStyleSheet from './useStyleSheet'
 
-const UseStyleSheetTestbed = function ({location, destroyOnUnmount}) {
-  const state = useStyleSheet(location, {destroyOnUnmount})
+const UseStyleSheetTestbed = function ({location, removeOnUnmount, usesSuspense}) {
+  const state = useStyleSheet(location, {removeOnUnmount, usesSuspense})
 
   return (
     <div className="space-y-4">
