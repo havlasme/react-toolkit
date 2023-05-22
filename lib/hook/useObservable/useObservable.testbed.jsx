@@ -27,6 +27,7 @@ const observable$ = (function () {
 
 const UseObservableTestBed = function ({initialState}) {
   const [state, dispatch] = useObservable(observable$, initialState)
+  const [state2] = useObservable(observable$, initialState)
 
   const dispatchState = useCallback(
     function () {
@@ -36,7 +37,7 @@ const UseObservableTestBed = function ({initialState}) {
   return (
     <div className="space-y-4">
       <div className="space-y-2">
-        current state: {state}
+        current state: {state} / {state2}
       </div>
 
       <div className="space-x-2">

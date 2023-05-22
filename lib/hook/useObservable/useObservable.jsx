@@ -4,7 +4,7 @@ import {useCallback, useLayoutEffect, useState} from 'react'
  * The useObservable hook.
  *
  * @param {Object} observable$  the observable.
- * @param {any} initialState  the initial state.
+ * @param {any} [initialState=null]  the initial state.
  * @return {[any,function]}
  */
 const useObservable = function (observable$, initialState = null) {
