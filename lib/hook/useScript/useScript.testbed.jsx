@@ -1,7 +1,7 @@
 import useScript from './useScript'
 
-const UseScriptTestBed = function ({location, destroyOnUnmount}) {
-  const state = useScript(location, {destroyOnUnmount})
+const UseScriptTestBed = function ({location, removeOnUnmount, usesSuspense}) {
+  const state = useScript(location, {removeOnUnmount, usesSuspense})
 
   return (
     <div className="space-y-4">
