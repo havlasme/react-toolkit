@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react'
+import {useLayoutEffect, useState} from 'react'
 import runCallable from '../../util/runCallable'
 
 /**
@@ -11,7 +11,7 @@ const useMounted = function (callback) {
   // the state. is the component mounted?
   const [state, setState] = useState(false)
 
-  useEffect(
+  useLayoutEffect(
     function () {
       setState(true)
       return runCallable(callback)
