@@ -37,7 +37,7 @@ const UseObservableTestBed = function ({initialState}) {
   return (
     <div className="space-y-4">
       <div className="space-y-2">
-        current state: {state} / {state2}
+        current state: {String(state)} / {String(state2)}
       </div>
 
       <div className="space-x-2">
