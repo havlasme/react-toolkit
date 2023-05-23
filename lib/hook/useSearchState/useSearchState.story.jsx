@@ -1,14 +1,16 @@
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import {hookTestBedControl} from '../../../.storybook/component'
 import UseSearchStateTestBed from './useSearchState.testbed'
 import UseSearchStateTestBedJSX from './useSearchState.testbed?raw'
 
 /**
- * The `useSearchState` is a custom React Hook that allows for the easy manipulation of query string parameters in the URL.
- * The hook takes a key argument which is the key of the query string parameter and returns a tuple with the current value and a function to update it.
- * The hook is designed to be used with `react-router-dom` - must be installed as project dependency.
+ * The `useSearchState` is a custom React Hook that allows for the easy manipulation of query string parameters in the
+ * URL. The hook takes a **key** argument which is the key of the query string parameter and **returns** a tuple with
+ * the current value and a function to update it. The hook is designed to be used with `react-router-dom` - must be
+ * installed as project dependency.
  *
  * ```jsx
- * const [state, setState] = useSearchState(paramName)
+ * const [state, setState] = useSearchState(key)
  * ```
  *
  * ```jsdoc
@@ -36,6 +38,7 @@ export default {
   component: UseSearchStateTestBed,
   tags: ['autodocs'],
   decorators: [
+    hookTestBedControl,
     (Component) => (
       <BrowserRouter>
         <Routes>
@@ -53,4 +56,7 @@ export default {
   },
 }
 
+/**
+ * ## The TestBed
+ */
 export const HookTestBed = {}
