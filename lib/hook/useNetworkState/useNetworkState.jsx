@@ -26,10 +26,9 @@ const subscribe = function (callback) {
 const useNetworkState = function (callback = null) {
   useLayoutEffect(
     function () {
-      if (typeof callback !== 'function') {
-        return void 0
+      if (typeof callback === 'function') {
+        return subscribe(callback)
       }
-      return subscribe(callback)
     }, [callback])
 
   return useSyncExternalStore(subscribe, getSnapshot)
