@@ -7,20 +7,20 @@ const UseRequestTestBed = function ({request, delay}) {
       function () {
         return function () {
           return fetch(request)
-          .then(
-            function (response) {
-              return response.json()
+            .then(
+              function (response) {
+                return response.json()
+              })
+            .then(function (response) {
+              return new Promise(
+                function (resolve) {
+                  setTimeout(
+                    function () {
+                      resolve(response)
+                    }, delay)
+                },
+              )
             })
-          .then(function (response) {
-            return new Promise(
-              function (resolve) {
-                setTimeout(
-                  function () {
-                    resolve(response)
-                  }, delay)
-              },
-            )
-          })
         }
       }, [request, delay]))
 
