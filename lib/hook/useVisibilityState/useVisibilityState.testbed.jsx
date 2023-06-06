@@ -4,11 +4,11 @@ import useVisibilityState from './useVisibilityState'
 const UseVisibilityStateTestBed = function () {
   const previousTitleRef = useRef(null)
 
-  // NOTE: use window.parent.document.title to change the title of the parent window (since this is an iframe).
+  // NOTE: use window parent since this is in storybook.
   const visibilityState = useVisibilityState(
     useCallback(
-      function (visible) {
-        if (!visible) {
+      function (event, visibilityState) {
+        if (visibilityState === 'hidden') {
           previousTitleRef.current = window.parent.document.title
           window.parent.document.title = 'Come back to us!'
         } else {
@@ -19,7 +19,10 @@ const UseVisibilityStateTestBed = function () {
   return (
     <div className="space-y-4">
       <div className="space-y-2">
-        current state: <strong>{String(visibilityState)}</strong>
+        current state:{' '}
+        <strong>
+          {String(visibilityState)}
+        </strong>
         <br/>
         <em>NOTE: the window title should change to <strong>Come back to us!</strong> when the window is not visible.</em>
       </div>

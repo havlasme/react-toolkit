@@ -1,36 +1,43 @@
-import {useLayoutEffect, useSyncExternalStore} from 'react'
+import {useEffect, useSyncExternalStore} from 'react'
 
 const getSnapshot = function () {
-  return document.visibilityState === 'visible'
+  return document.visibilityState
 }
 
 const subscribe = function (callback) {
-  const onEvent = function () {
-    return callback(getSnapshot())
+  const runCallbackOnEvent = function (event) {
+    return callback(event, getSnapshot())
   }
-  document.addEventListener('visibilitychange', onEvent)
+  document.addEventListener('visibilitychange', runCallbackOnEvent, {passive: true})
 
   return function () {
-    document.removeEventListener('visibilitychange', onEvent)
+    document.removeEventListener('visibilitychange', runCallbackOnEvent)
   }
 }
 
 /**
  * The useVisibilityState hook.
  *
- * @param {function} [callback=null]  the visibilitychange event callback.
- * @return {boolean}
+ * @param {function} [callback=null]  the event callback.
+ * @return {string}
  */
 const useVisibilityState = function (callback = null) {
-  useLayoutEffect(
+  if (typeof callback !== 'function' && callback !== null) {
+    throw new TypeError('callback must be a function|null.')
+  }
+
+  // the visibility state.
+  const state = useSyncExternalStore(subscribe, getSnapshot)
+
+  // optionally, subscribe a callback to the event.
+  useEffect(
     function () {
-      if (typeof callback !== 'function') {
-        return void 0
+      if (typeof callback === 'function') {
+        return subscribe(callback)
       }
-      return subscribe(callback)
     }, [callback])
 
-  return useSyncExternalStore(subscribe, getSnapshot)
+  return state
 }
 
 export default useVisibilityState
