@@ -1,49 +1,54 @@
-import {equals} from 'ramda'
-import {useLayoutEffect, useMemo, useSyncExternalStore} from 'react'
+import {useEffect, useSyncExternalStore} from 'react'
 
-const getSnapshot = function () {
-  return {height: window.innerHeight, width: window.innerWidth}
-}
-
-const subscribe = function (callback) {
-  const onEvent = function () {
-    return callback(getSnapshot())
-  }
-  window.addEventListener('resize', onEvent)
+const getSnapshot = (function () {
+  let memoized = null
 
   return function () {
-    window.removeEventListener('resize', onEvent)
+    const snapshot = {height: window.innerHeight, width: window.innerWidth}
+
+    if (snapshot.height !== memoized?.height || snapshot.width !== memoized?.width) {
+      memoized = snapshot
+    }
+    return memoized
+  }
+})()
+
+const subscribe = function (callback) {
+  const runCallbackOnEvent = function (event) {
+    return callback(event, getSnapshot())
+  }
+  window.addEventListener('resize', runCallbackOnEvent, {passive: true})
+  window.addEventListener('orientationchange', runCallbackOnEvent, {passive: true})
+
+  return function () {
+    window.removeEventListener('resize', runCallbackOnEvent)
+    window.removeEventListener('orientationchange', runCallbackOnEvent)
   }
 }
 
 /**
  * The useWindowSize hook.
  *
- * @param {function} [callback=null]  the resize event callback.
- * @return {{width : number, height : number}}
+ * @param {function} [callback=null]  the event callback.
+ * @return {{height: number, width: number}}
  */
 const useWindowSize = function (callback = null) {
-  const getMemoSnapshot = useMemo(function () {
-    let memo = null
+  if (typeof callback !== 'function' && callback !== null) {
+    throw new TypeError('callback must be a function|null.')
+  }
 
-    return function () {
-      const snapshot = getSnapshot()
+  // the window size state.
+  const state = useSyncExternalStore(subscribe, getSnapshot)
 
-      if (!equals(memo, snapshot)) {
-        memo = snapshot
-      }
-      return memo
-    }
-  }, [])
-
-  useLayoutEffect(
+  // optionally, subscribe a callback to the event.
+  useEffect(
     function () {
       if (typeof callback === 'function') {
         return subscribe(callback)
       }
     }, [callback])
 
-  return useSyncExternalStore(subscribe, getMemoSnapshot)
+  return state
 }
 
 export default useWindowSize
