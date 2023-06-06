@@ -4,12 +4,12 @@ import runCallable from '../../util/runCallable'
 /**
  * The useBoolState hook.
  *
- * @param {boolean} initialState  the initial state.
+ * @param {boolean|function} initialState  the initial state.
  * @return {[boolean, function]}
  */
 const useBoolState = function (initialState) {
-  if (typeof initialState !== 'boolean') {
-    throw new TypeError('initialState must be a boolean.')
+  if (typeof initialState !== 'boolean' && typeof initialState !== 'function') {
+    throw new TypeError('initialState must be a boolean|function.')
   }
 
   // the state. must be a `boolean` value.
