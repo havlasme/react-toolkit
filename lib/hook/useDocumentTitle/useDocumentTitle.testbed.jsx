@@ -24,7 +24,10 @@ const UseDocumentTitleTestBed = function ({restoreOnUnmount, title}) {
       ) : null}
 
       <div className="space-y-2">
-        current `document.title`: <strong>{latestDocumentTitle}</strong>
+        current `document.title`:{' '}
+        <strong>
+          {latestDocumentTitle}
+        </strong>
       </div>
 
       <div className="space-x-2">

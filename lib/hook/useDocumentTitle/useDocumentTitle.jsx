@@ -11,16 +11,15 @@ const DEFAULT_OPTION_OBJECT = {
  * @param {Object} [option]  the option object.
  * @param {boolean} [option.restoreOnUnmount=true]  restore previous title on unmount.
  */
-const useDocumentTitle = function (title, option = DEFAULT_OPTION_OBJECT) {
+const useDocumentTitle = function (title, {restoreOnUnmount = true} = DEFAULT_OPTION_OBJECT) {
   if (typeof title !== 'string' && title !== null) {
     throw new TypeError('title must be a string|null.')
   }
-  const {restoreOnUnmount = true} = option
 
   // the previous title ref. to be restored on unmount.
   const previousTitleRef = useRef(document.title)
 
-  // update the document title.
+  // set the document title.
   useLayoutEffect(
     function () {
       if (typeof title === 'string') {
@@ -36,6 +35,7 @@ const useDocumentTitle = function (title, option = DEFAULT_OPTION_OBJECT) {
           document.title = previousTitleRef.current
         }
       }
+      //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 }
 
