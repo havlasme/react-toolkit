@@ -17,7 +17,7 @@ const useObservable = function (observable$, initialState = null) {
       observable$.next(nextState)
     }, [observable$])
 
-  // subscribe to the observable. on every new value, update the state.
+  // subscribe to the observable. update the state on each emission.
   useLayoutEffect(
     function () {
       const subscription = observable$.subscribe(
