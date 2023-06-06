@@ -9,9 +9,10 @@ import {useMemo} from 'react'
  * @see https://github.com/ai/nanoid
  */
 const useNanoId = function (id = null) {
-  return useMemo(function () {
-    return id === null ? nanoid() : id
-  }, [id])
+  return useMemo(
+    function () {
+      return id === null ? nanoid() : id
+    }, [id])
 }
 
 export default useNanoId
