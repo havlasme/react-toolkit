@@ -27,6 +27,7 @@ const useTimeout = function (callback, delay = null) {
         timeoutRef.current = setTimeout(callback, delay)
         return cancelTimeout
       }
+      //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [callback, delay])
 
   return cancelTimeout
