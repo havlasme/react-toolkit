@@ -5,33 +5,41 @@ const getSnapshot = function () {
 }
 
 const subscribe = function (callback) {
-  const onEvent = function () {
-    return callback(getSnapshot())
+  const runCallbackOnEvent = function (event) {
+    return callback(event, getSnapshot())
   }
-  window.addEventListener('online', onEvent)
-  window.addEventListener('offline', onEvent)
+  window.addEventListener('online', runCallbackOnEvent, {passive: true})
+  window.addEventListener('offline', runCallbackOnEvent, {passive: true})
 
   return function () {
-    window.removeEventListener('online', onEvent)
-    window.removeEventListener('offline', onEvent)
+    window.removeEventListener('online', runCallbackOnEvent)
+    window.removeEventListener('offline', runCallbackOnEvent)
   }
 }
 
 /**
  * The useNetworkState hook.
  *
- * @param {function} [callback=null]  the online/offline event callback.
+ * @param {function} [callback=null]  the event callback.
  * @return {boolean}
  */
 const useNetworkState = function (callback = null) {
+  if (typeof callback !== 'function' && callback !== null) {
+    throw new TypeError('callback must be a function|null.')
+  }
+
+  // the network state.
+  const state = useSyncExternalStore(subscribe, getSnapshot)
+
+  // optionally, subscribe a callback to the event.
   useLayoutEffect(
     function () {
-      if (typeof callback === 'function') {
+      if (typeof (callback) === 'function') {
         return subscribe(callback)
       }
     }, [callback])
 
-  return useSyncExternalStore(subscribe, getSnapshot)
+  return state
 }
 
 export default useNetworkState
