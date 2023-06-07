@@ -1,14 +1,14 @@
 import {useCallback, useState} from 'react'
 import useInterval from './useInterval'
 
-const UseIntervalTestBed = function ({delay}) {
+const UseIntervalTestBed = function ({interval}) {
   const [state, setState] = useState('interval scheduled...')
   const [count, setCount] = useState(0)
 
   const cancelInterval = useInterval(useCallback(
     function () {
       setCount(state => state + 1)
-    }, [setCount]), delay)
+    }, [setCount]), interval)
 
   const onClickCallback = useCallback(
     function () {
