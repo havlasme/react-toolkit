@@ -1,5 +1,6 @@
 import {useMemo} from 'react'
 import CacheContext from './CacheContext'
+import createObservableCache from './createObservableCache'
 
 /**
  * The CacheProvider component.
@@ -7,13 +8,15 @@ import CacheContext from './CacheContext'
  * @return {JSX.Element}
  * @component
  */
-const CacheProvider = function ({cache, children, signal}) {
-  // the cache and the signal instance.
-  // memoized to avoid unnecessary re-rendering.
+const CacheProvider = function ({cache, children}) {
+  // the cache.
   const value = useMemo(
     function () {
-      return [cache, signal]
-    }, [cache, signal])
+      if (Object.hasOwn(cache, 'subscribe')) {
+        return cache
+      }
+      return createObservableCache(cache)
+    }, [cache])
 
   return (
     <CacheContext.Provider value={value}>

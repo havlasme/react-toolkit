@@ -8,6 +8,7 @@ const UseCacheTestBed = function () {
   const updateStateCallback = useCallback(
     function () {
       setState('test' + Math.round(Math.random() * 100))
+      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
   return (
