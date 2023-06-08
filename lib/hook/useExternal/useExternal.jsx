@@ -14,17 +14,15 @@ const DEFAULT_OPTION_OBJECT = {
  * @param {boolean} [option.usesSuspense=false]  suspend the component until the external resource is loaded.
  * @return {string|null}
  */
-const useExternal = function (createDomNode, option = DEFAULT_OPTION_OBJECT) {
+const useExternal = function (createDomNode, {removeOnUnmount = true, usesSuspense = false} = DEFAULT_OPTION_OBJECT) {
   if (typeof createDomNode !== 'function') {
     throw new TypeError('createDomNode must be a function.')
   }
-  const {removeOnUnmount = true, usesSuspense = false} = option
 
   // create a dom node.
   const domNode = useMemo(
     function () {
       const domNode = createDomNode()
-
       if (domNode !== null) {
         domNode.dataset.state ??= 'loading'
         domNode.dataset.references ??= '0'
