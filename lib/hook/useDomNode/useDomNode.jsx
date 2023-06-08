@@ -1,19 +1,19 @@
 import {useInsertionEffect, useMemo} from 'react'
 
 /**
- * The useMountPoint hook.
+ * The useDomNode hook.
  *
  * @param {function} createDomNode  the callback that creates dom node.
  * @return {any}
  */
-const useMountPoint = function (createDomNode) {
+const useDomNode = function (createDomNode) {
   // the dom node.
   const domNode = useMemo(
     function () {
       return createDomNode()
     }, [createDomNode])
 
-  // insert the dom node to the document body.
+  // insert the dom node to the document.
   useInsertionEffect(
     function () {
       document.body.appendChild(domNode)
@@ -28,4 +28,4 @@ const useMountPoint = function (createDomNode) {
   return domNode
 }
 
-export default useMountPoint
+export default useDomNode

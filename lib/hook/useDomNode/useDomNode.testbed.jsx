@@ -1,9 +1,9 @@
 import {createPortal} from 'react-dom'
 import useBoolState from '../useBoolState'
-import useMountPoint from './useMountPoint'
+import useDomNode from './useDomNode'
 
 const Component = function ({open, onClose}) {
-  const domNode = useMountPoint(
+  const domNode = useDomNode(
     function () {
       const element = document.createElement('div')
       element.classList.add('fixed')
@@ -17,9 +17,13 @@ const Component = function ({open, onClose}) {
       <div onClick={onClose} className="absolute inset-0 bg-black/50 z-40"/>
 
       <div className="relative py-3 px-4 mt-8 mx-auto max-w-5xl bg-white z-50">
+        <h2 className="mb-4 text-xl font-bold">
+          useDomNode
+        </h2>
+
         <p>
-          The `useMountPoint` hook creates a DOM node for a component to be rendered outside of its current location in the React DOM hierarchy.
-          This is achieved by creating a new mount point that is appended to the document body, and using the `createPortal` method to render the component into this new mount point.
+          The <code>useDomNode</code> is a custom React Hook that creates a dom node and appends it to the document body. The hook
+          takes a <strong>createDomNode</strong> as an argument that should create and return a dom node. The hook <strong>returns</strong> the dom node.
         </p>
 
         <div className="flex py-2 px-2 justify-end">
@@ -32,7 +36,7 @@ const Component = function ({open, onClose}) {
   ) : null, domNode)
 }
 
-const UseMountPointTestBed = function () {
+const UseDomNodeTestbed = function () {
   const [state, setState] = useBoolState(false)
 
   return (
@@ -50,4 +54,4 @@ const UseMountPointTestBed = function () {
   )
 }
 
-export default UseMountPointTestBed
+export default UseDomNodeTestbed
