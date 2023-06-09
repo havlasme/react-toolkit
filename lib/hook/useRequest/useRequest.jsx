@@ -14,7 +14,6 @@ const useRequest = function (request) {
   })
 
   // the dispatch callback.
-  // dispatch the request and update the state.
   const dispatch = useCallback(
     function (...rest) {
       setState(function (state) {
@@ -31,10 +30,11 @@ const useRequest = function (request) {
           },
           function (response) {
             setState({
-              exception: response ?? null, fetching: false, initialized: true, loading: false, ok: false, response: response.response ?? null,
+              exception: response ?? null, fetching: false, initialized: true, loading: false, ok: false, response: response?.response ?? null,
             })
             return response
           })
+      //eslint-disable-next-line react-hooks/exhaustive-deps
     }, [request])
 
   return [state, dispatch]
