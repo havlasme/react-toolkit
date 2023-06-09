@@ -3,8 +3,4 @@ module.exports = {
     './lib/**/*.{js,jsx}',
     './.storybook/component/**/*.{js,jsx}',
   ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
 }
