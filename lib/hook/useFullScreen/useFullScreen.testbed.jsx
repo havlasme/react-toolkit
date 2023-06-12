@@ -1,11 +1,13 @@
+import {useRef} from 'react'
 import useFullScreen from './useFullScreen'
 
 const UseFullScreenTestBed = function () {
-  const [element, state, requestFullScreen, exitFullScreen] = useFullScreen()
+  const domNodeRef = useRef(null)
+  const [state, requestFullScreen, exitFullScreen] = useFullScreen(domNodeRef)
   const className = state ? 'space-y-4 py-3 px-4 bg-white' : 'space-y-4'
 
   return (
-    <div ref={element} className={className}>
+    <div ref={domNodeRef} className={className}>
       <div className="space-y-2">
         current state: <strong>{String(state)}</strong>
       </div>
